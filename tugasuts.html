@@ -133,13 +133,13 @@ class Student:
 
 
 def main():
-    student1 = Student("Ali")
-    student1.pay_spp()
-    student1.enroll_course("Pemrograman Dasar")
-    student1.enroll_course("Algoritma dan Struktur Data")
-    student1.submit_grade(85)
-    student1.submit_grade(90)
-    student1.display_final_grade()
+    kacrut = Student("Kacrut")
+    kacrut.pay_spp()
+    kacrut.enroll_course("Pemrograman Dasar")
+    kacrut.enroll_course("Algoritma dan Struktur Data")
+    kacrut.submit_grade(85)
+    kacrut.submit_grade(90)
+    kacrut.display_final_grade()
 
 
 if __name__ == "__main__":
@@ -157,24 +157,24 @@ if __name__ == "__main__":
     <script>
         function runSimulatedFlow() {
             const logs = [];
-            logs.push("Proses mulai: Mahasiswa Ali mulai mengikuti kuliah.");
+            logs.push("Proses mulai: Mahasiswa Kacrut mulai mengikuti kuliah.");
 
             // Simulate the process
             const sppTerbayar = true;
             if (sppTerbayar) {
                 logs.push("SPP berhasil dibayarkan.");
-                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Pemrograman Dasar.");
-                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Algoritma dan Struktur Data.");
+                logs.push("Mahasiswa Kacrut telah mendaftar ke mata kuliah Pemrograman Dasar.");
+                logs.push("Mahasiswa Kacrut telah mendaftar ke mata kuliah Algoritma dan Struktur Data.");
 
                 const grades = [85, 90];
                 const finalGrade = grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
                 logs.push("Nilai ujian diproses.");
-                logs.push(`Nilai akhir untuk Ali adalah ${finalGrade.toFixed(2)}.`);
+                logs.push(`Nilai akhir untuk Kacrut adalah ${finalGrade.toFixed(2)}.`);
             } else {
                 logs.push("SPP belum dibayarkan. Proses dihentikan.");
             }
 
-            logs.push("Proses selesai: Mahasiswa Ali berhasil mendapatkan KHS.");
+            logs.push("Proses selesai: Mahasiswa Kacrut berhasil mendapatkan KHS.");
 
             const logsDiv = document.getElementById('logs');
             logsDiv.innerHTML = logs.map(log => `<div class="log-entry"><p>${log}</p></div>`).join('');
