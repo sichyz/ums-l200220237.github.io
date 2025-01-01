@@ -3,140 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Information</title>
+    <title>Simulasi Proses Mahasiswa</title>
     <style>
-        /* General styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1e3a5f, #3a6073);
-            color: #eaeff5;
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            box-sizing: border-box;
         }
 
-        /* Container styling */
-        .container {
-            background: #2b4865;
-            border-radius: 10px;
-            padding: 20px 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 600px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f, #3a6073);
+            color: #eaeff5;
+            padding: 40px;
+        }
+
+        h1, h2 {
             text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        /* Header styling */
-        h1 {
-            margin: 0;
-            font-size: 2rem;
-            color: #eaeff5;
-        }
-
-        h2 {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            color: #d4dde6;
-        }
-
-        /* Buttons */
-        .button {
-            background-color: #3a6073;
-            color: #eaeff5;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 10px 5px;
-            transition: background 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #1e3a5f;
-        }
-
-        /* Status box */
-        .status {
-            background: #3a6073;
-            color: #eaeff5;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            font-size: 1rem;
-            text-align: left;
-        }
-
-        /* Grade table */
-        table {
+        main {
             width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        table th, table td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #d4dde6;
-        }
-
-        table th {
-            background-color: #3a6073;
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #3a6073;
+            border: none;
+            font-size: 1.5rem;
+            border-radius: 8px;
             color: #eaeff5;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
         }
+
+        button:hover {
+            background: #1e3a5f;
+        }
+
+        .logs {
+            margin-top: 30px;
+            padding: 20px;
+            background: #2b4865;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .log-entry {
+            background: #3a6073;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .log-entry p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e3a5f;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            overflow-x: auto;
+            color: #eaeff5;
+            white-space: pre-wrap;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Student: Ali</h1>
-        <h2>L200220237</h2>
+    <header>
+        <h1>Simulasi Proses Mahasiswa</h1>
+    </header>
 
-        <!-- SPP Status -->
-        <div class="status">
-            <strong>Status:</strong> SPP telah dibayar.
+    <main>
+        <h2>Langkah-langkah Proses Mahasiswa</h2>
+
+        <div class="code-block">
+            <span class="code">class Student:</span><br>
+            <span class="code">    def __init__(self, name):</span><br>
+            <span class="code">        self.name = name</span><br>
+            <span class="code">        self.spp_paid = False</span><br>
+            <span class="code">        self.grades = []</span><br><br>
+
+            <span class="code">    def pay_spp(self):</span><br>
+            <span class="code">        self.spp_paid = True</span><br>
+            <span class="code">        print(f"{self.name} telah membayar SPP.")</span><br><br>
+
+            <span class="code">    def enroll_course(self, course):</span><br>
+            <span class="code">        if not self.spp_paid:</span><br>
+            <span class="code">            print(f"{self.name} tidak bisa mendaftar ke mata kuliah {course}.")</span><br>
+            <span class="code">        else:</span><br>
+            <span class="code">            print(f"{self.name} telah mendaftar ke mata kuliah {course}.")</span><br><br>
+
+            <span class="code">    def submit_grade(self, grade):</span><br>
+            <span class="code">        self.grades.append(grade)</span><br>
+            <span class="code">        print(f"{self.name} telah mendapatkan nilai {grade}.")</span><br><br>
+
+            <span class="code">    def calculate_final_grade(self):</span><br>
+            <span class="code">        final_grade = sum(self.grades) / len(self.grades)</span><br><br>
+
+            <span class="code">student1 = Student("Ali")</span><br>
+            <span class="code">student1.pay_spp()</span><br>
+            <span class="code">student1.enroll_course("Pemrograman Dasar")</span><br>
         </div>
 
-        <!-- Courses -->
-        <h3>Mata Kuliah</h3>
-        <div class="status">
-            <ul>
-                <li>Pemrograman Dasar - <strong>Terdaftar</strong></li>
-                <li>Algoritma dan Struktur Data - <strong>Terdaftar</strong></li>
-            </ul>
+        <button onclick="runSimulatedFlow()">Jalankan Simulasi</button>
+
+        <div class="logs" id="logs">
+            <p>Hasil akan muncul di sini...</p>
         </div>
+    </main>
 
-        <!-- Grades -->
-        <h3>Nilai</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Mata Kuliah</th>
-                    <th>Nilai</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Pemrograman Dasar</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Algoritma dan Struktur Data</td>
-                    <td>90</td>
-                </tr>
-            </tbody>
-        </table>
+    <script>
+        function runSimulatedFlow() {
+            const logs = [];
+            logs.push("Proses mulai: Mahasiswa Ali mulai mengikuti kuliah.");
 
-        <!-- Final Grade -->
-        <div class="status">
-            <strong>Nilai Akhir:</strong> 87.5
-        </div>
+            const sppTerbayar = true;
+            if (sppTerbayar) {
+                logs.push("SPP berhasil dibayarkan.");
+                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Pemrograman Dasar.");
+                logs.push("Mahasiswa Ali telah mendaftar ke mata kuliah Algoritma dan Struktur Data.");
 
-        <!-- Buttons -->
-        <button class="button">Tambah Nilai</button>
-        <button class="button">Edit Status</button>
-    </div>
+                const grades = [85, 90];
+                const finalGrade = grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
+                logs.push("Nilai ujian diproses.");
+                logs.push(`Nilai akhir untuk Ali adalah ${finalGrade.toFixed(2)}.`);
+            } else {
+                logs.push("SPP belum dibayarkan. Proses dihentikan.");
+            }
+
+            logs.push("Proses selesai: Mahasiswa Ali berhasil mendapatkan KHS.");
+
+            const logsDiv = document.getElementById('logs');
+            logsDiv.innerHTML = logs.map(log => `<div class="log-entry"><p>${log}</p></div>`).join('');
+        }
+    </script>
 </body>
 </html>
