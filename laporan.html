@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Clustering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .cluster {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #ecf0f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleClusters() {
+            const clusters = document.querySelectorAll('.cluster');
+            clusters.forEach(cluster => {
+                if (cluster.style.display === 'none') {
+                    cluster.style.display = 'block';
+                } else {
+                    cluster.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Laporan Hasil Clustering</h1>
+    <p>Data diproses dan dianalisis dengan metode TF-IDF dan algoritma KMeans untuk membuat 3, 4, dan 5 klaster.</p>
+    <button onclick="toggleClusters()">Toggle Clusters</button>
+    <h2>Analisis</h2>
+    <div>
+        <div class="cluster">
+            <h3>Hasil Clustering (3 Klaster)</h3>
+            <ul>
+                <li>Cluster 0: whatsapp, fki, mentoring</li>
+                <li>Cluster 1: whatsapp, fki, mentoring</li>
+                <li>Cluster 2: whatsapp, fki, mentoring</li>
+            </ul>
+        </div>
+        <div class="cluster">
+            <h3>Hasil Clustering (4 Klaster)</h3>
+            <ul>
+                <li>Cluster 0: whatsapp, fki, mentoring</li>
+                <li>Cluster 1: whatsapp, fki, mentoring</li>
+                <li>Cluster 2: whatsapp, fki, mentoring</li>
+                <li>Cluster 3: whatsapp, fki, mentoring</li>
+            </ul>
+        </div>
+        <div class="cluster">
+            <h3>Hasil Clustering (5 Klaster)</h3>
+            <ul>
+                <li>Cluster 0: whatsapp, fki, mentoring</li>
+                <li>Cluster 1: whatsapp, fki, mentoring</li>
+                <li>Cluster 2: whatsapp, fki, mentoring</li>
+                <li>Cluster 3: whatsapp, fki, mentoring</li>
+                <li>Cluster 4: whatsapp, fki, mentoring</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
